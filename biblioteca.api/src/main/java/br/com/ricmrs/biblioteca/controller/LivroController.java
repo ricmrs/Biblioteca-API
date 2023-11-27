@@ -4,7 +4,6 @@ import br.com.ricmrs.biblioteca.domain.autor.Autor;
 import br.com.ricmrs.biblioteca.domain.autor.AutorRepository;
 import br.com.ricmrs.biblioteca.domain.editora.Editora;
 import br.com.ricmrs.biblioteca.domain.editora.EditoraRepository;
-import br.com.ricmrs.biblioteca.api.domain.livro.*;
 import br.com.ricmrs.biblioteca.domain.livro.*;
 import br.com.ricmrs.biblioteca.infra.exception.ValidacaoException;
 import jakarta.validation.Valid;

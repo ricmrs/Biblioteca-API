@@ -1,6 +1,5 @@
 package br.com.ricmrs.biblioteca.controller;
 
-import br.com.ricmrs.biblioteca.api.domain.autor.*;
 import br.com.ricmrs.biblioteca.domain.autor.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
