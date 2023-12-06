@@ -20,7 +20,7 @@ Sendo {username} e {password} as variáveis de acesso ao banco de dados. Com ist
 
 # REST API
 
-Este projeto utiliza o Swagger UI para visualizar os endpoints da aplicação em [index.html](http://localhost:8080/swagger-ui/index.html#/). 
+Este projeto utiliza o Swagger UI para visualizar os endpoints da aplicação em <a href="http://localhost:8080/swagger-ui/index.html#/" target="_blank">index.html</a>
 
 ## Entities
 
