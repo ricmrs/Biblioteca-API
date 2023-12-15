@@ -8,7 +8,7 @@ create table livros (
     autor_id bigint not null,
     editora_id bigint not null,
     data_publicacao date not null,
-    preco smallint not null,
+    preco decimal(6,2) not null,
 
     primary key(id),
     constraint fk_livros_autor_id foreign key(autor_id) references autores(id),
