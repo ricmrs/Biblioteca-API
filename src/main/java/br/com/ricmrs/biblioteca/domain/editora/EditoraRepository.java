@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EditoraRepository extends JpaRepository<Editora, Long> {
     Page<Editora> findAllByAtivoTrue(Pageable paginacao);
+
+    Boolean existsByIdAndAtivoTrue(Long id);
 }

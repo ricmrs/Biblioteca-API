@@ -29,6 +29,14 @@ public class LivroController {
     @PostMapping
     @Transactional
     public ResponseEntity<DadosDetalhamentoLivro> cadastrar(@RequestBody @Valid DadosCadastroLivro dados, UriComponentsBuilder uriBuilder){
+        if(!autorRepository.existsByIdAndAtivoTrue(dados.autorId())){
+            throw new ValidacaoException("Id do autor informado não existe.");
+        }
+
+        if(!editoraRepository.existsByIdAndAtivoTrue(dados.editoraId())){
+            throw new ValidacaoException("Id da editora informada não existe.");
+        }
+
         Autor autor = autorRepository.getReferenceById(dados.autorId());
         Editora editora = editoraRepository.getReferenceById(dados.editoraId());
         var livro = new Livro(dados, autor, editora);
@@ -45,11 +53,11 @@ public class LivroController {
     @PutMapping
     @Transactional
     public ResponseEntity<DadosDetalhamentoLivro> atualizar(@RequestBody @Valid DadosAtualizacaoLivro dados) {
-        if(dados.autorId() != null && !autorRepository.existsById(dados.autorId())) {
+        if(dados.autorId() != null && !autorRepository.existsByIdAndAtivoTrue(dados.autorId())) {
             throw new ValidacaoException("Id do autor informado não existe.");
         }
-        if(dados.editoraId() != null && !editoraRepository.existsById(dados.editoraId())){
-            throw new RuntimeException("Id da editora informado não existe.");
+        if(dados.editoraId() != null && !editoraRepository.existsByIdAndAtivoTrue(dados.editoraId())){
+            throw new ValidacaoException("Id da editora informada não existe.");
         }
 
         Livro livro = livroRepository.getReferenceById(dados.id());
